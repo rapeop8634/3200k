@@ -1,5 +1,3 @@
-__author__ = 'zmiller'
-
 
 def hist(s):
     """returns the histogram of the characters in s
@@ -11,8 +9,13 @@ def hist(s):
     {'!': 2, 'x': 2}
 
     """
-    pass
-
+    results={}
+    for symbol in s:
+        if symbol not in results:
+            results[symbol] == 1
+        else:
+            results[symbol] += 1
+        return results  
 
 def str_to_int(s):
     """converts a string to an integer value
@@ -26,8 +29,10 @@ def str_to_int(s):
     hint: the built in ord and chr functions
 
     """
-    pass
-
+    results = []
+    for symbol in s:
+        results +=(str(ord(symbol)))
+    return int("".join(results))
 
 def null_list(length):
     """return a list of all None values of given length
@@ -39,4 +44,12 @@ def null_list(length):
     [None]
 
     """
-    pass
+    results = []
+    for something in range(length):
+        results.append(None)
+    return results
+
+
+if __name__== '__main__':
+    import doctest
+    doctest.testmod()
